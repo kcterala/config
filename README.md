@@ -18,7 +18,7 @@ I really like JetBrains Mono font. I tried so many mono fonts but I keep coming 
 
 
 ### 2. Terminal
-Now I am using [ghostty](https://ghostty.org/), with Arthur Theme. Before this, I used iterm2 with the same theme.
+Now I have started using [ghostty](https://ghostty.org/), with Arthur Theme. Before this, I used iterm2 with the same theme.
 - Ghostty Configuration 
 - Iterm2 Configuration
     - Download [Arthur](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Arthur.itermcolors) iterm theme, by saving the file (remove .txt extension when saving).

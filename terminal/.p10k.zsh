@@ -43,7 +43,7 @@
   local yellow='#F3F99D'
   # local blue='#57C7FF'
   local blue='39'
-  local green='#5fd700'
+  local green='#3ea61b'
   local cyan='#9AEDFE'
   local white='#F1F1F0'
 
