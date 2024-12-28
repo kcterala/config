@@ -1,3 +1,12 @@
+### TODOS
+- [ ] Write a shell script to create the symbolic links.
+- [ ] Add VS code configuration.
+- [ ] Add Sublime configuration.
+- [ ] Add Ghostty configuration.
+- [ ] Add Intellij configuration.
+- [ ] Add troubleshooting q/as
+
+
 # Mac Setup
 
 ### 1. Fonts
@@ -20,5 +29,22 @@ Now I am using [ghostty](https://ghostty.org/), with Arthur Theme. Before this, 
 ### 3. Shell Integration
 Zsh is the Mac's default shell and I'm using the same. I use p10k configuration for the prompt customization
 
+#### Steps to configure .zshrc and .p10k.zsh, once the repo is cloned
 - .zshrc Configuration
+    - Delete .zshrc file in the home folder.
+    - Create symbolic link of this repo's .zshrc to ~/.zshrc by running the following command
+    ```
+        ln -s [this repo's .zshrc file path] ~/.zshrc
+    ```
+
+
 - .p10k.zsh Configuration 
+    - Delete .p10k.zsh file in the home folder.
+    - Create symbolic link of this repo's .p10k.zsh to ~/.p10k.zsh by running the following command
+    ```
+        ln -s [this repo's .p10k.zsh file path] ~/.p10k.zsh
+    ```
+
+
+Run `source ~/.zshrc` once the above steps are done.
+
