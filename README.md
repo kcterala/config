@@ -1,7 +1,7 @@
 ### TODOS
 - [ ] Write a shell script to create the symbolic links.
 - [ ] Add VS code configuration.
-- [ ] Add Sublime configuration.
+- [x] Add Sublime configuration.
 - [ ] Add Ghostty configuration.
 - [ ] Add Intellij configuration.
 - [ ] Add troubleshooting q/as
