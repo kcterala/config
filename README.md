@@ -48,3 +48,8 @@ Zsh is the Mac's default shell and I'm using the same. I use p10k configuration 
 
 Run `source ~/.zshrc` once the above steps are done.
 
+
+### 4. Sublime Integration
+- Create symbolic links for the files that are in sublime-text repo
+Path to find in the mac - `~/Library/Application Support/Sublime Text/Packages/User`
+

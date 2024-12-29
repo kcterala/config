@@ -1,0 +1,9 @@
+{
+  "indent": 4,                    
+  "maxlinelength": 80,            
+  "sort_keys": false,             
+  "ensure_ascii": false,          
+  "trailing_commas": true,
+  "brace_newline": false,
+  "bracket_newline": false
+}
