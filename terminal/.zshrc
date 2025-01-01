@@ -69,56 +69,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls='ls --color'
-alias l.='ls -d .* --color'
-alias c='clear'
-alias ll='ls -la'
-
-## get rid of command not found ##
-alias cd..='cd ..'
- 
-## a quick way to get out of current directory ##
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-
-alias reload='source ~/.zshrc'
-alias ffs='sudo !!'
-alias home='cd ~'
-alias personal='cd ~/personal'
-alias work='cd ~/work'
-alias undo='git checkout -- .'
-alias diff='diff --color'
-
-function squashcommit() {
-    git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "Not a Git repository"; return 1; }
-    git add . || { echo "Failed to add changes"; return 1; }
-    if ! git commit -m "fix"; then
-        echo "Commit failed"
-        return 1
-    fi
-
-    if ! GIT_SEQUENCE_EDITOR="sed -i -re '2s/^pick/fixup/'" git rebase -i HEAD~2; then
-        echo "Squash failed"
-        return 1
-    fi
-}
-
-function commit() {
-    git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "Not a Git repository"; return 1; }
-    if [ -z "$1" ]; then
-        echo "Usage: commit <commit message>"
-        return 1
-    fi
-
-    git add .
-    git commit -m "$1"
-}
-
+# Source aliases and functions
+source "$HOME/.zsh/aliases.zsh"
+source "$HOME/.zsh/functions.zsh"
 
 # Open in tmux popup if on tmux, otherwise use --height mode
 export FZF_DEFAULT_OPTS='--height 40%  --layout reverse --border top'

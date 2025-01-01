@@ -1,5 +1,5 @@
 ### TODOS
-- [x] Write a shell script to create the symbolic links.
+- [x] Write a shell script to create the symlinks.
 - [ ] Add VS code configuration.
 - [x] Add Sublime configuration.
 - [ ] Add Ghostty configuration.

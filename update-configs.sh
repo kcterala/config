@@ -1,14 +1,21 @@
 #!/bin/bash
 
 ### ZSHRC config
+SOURCE_ZSHRC_DIR="$(pwd)/terminal/.zsh"
+TARGET_ZSHRC_DIR="$HOME/.zsh"
+
 SOURCE_ZSHRC="$(pwd)/terminal/.zshrc"
 TARGET_ZSHRC="$HOME/.zshrc"
 
-# Remove the existing .zshrc file
+# Remove the existing .zshrc file and .zsh file
+rm -rf "$TARGET_ZSHRC_DIR"
 rm -f "$TARGET_ZSHRC"
 
-echo "Creating symlink for .zshrc"
+
+echo "Creating symlink for .zshrc and .zsh file"
+ln -s "$SOURCE_ZSHRC_DIR" "$TARGET_ZSHRC_DIR"
 ln -s "$SOURCE_ZSHRC" "$TARGET_ZSHRC"
+
 
 
 ### P10K configuration
