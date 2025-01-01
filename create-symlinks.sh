@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### ZSHRC config
+### Terminal config
 SOURCE_ZSHRC_DIR="$(pwd)/terminal/.zsh"
 TARGET_ZSHRC_DIR="$HOME/.zsh"
 
@@ -11,12 +11,9 @@ TARGET_ZSHRC="$HOME/.zshrc"
 rm -rf "$TARGET_ZSHRC_DIR"
 rm -f "$TARGET_ZSHRC"
 
-
-echo "Creating symlink for .zshrc and .zsh file"
 ln -s "$SOURCE_ZSHRC_DIR" "$TARGET_ZSHRC_DIR"
 ln -s "$SOURCE_ZSHRC" "$TARGET_ZSHRC"
-
-
+echo "Created symlink for .zshrc file and .zsh directory"
 
 ### P10K configuration
 SOURCE_P10K="$(pwd)/terminal/.p10k.zsh"
@@ -25,19 +22,29 @@ TARGET_P10K="$HOME/.p10k.zsh"
 # Remove the existing .p10k.zsh
 rm -f "$TARGET_P10K"
 
-echo "Creating symlink for .p10k.zsh"
 ln -s "$SOURCE_P10K" "$TARGET_P10K"
-
-
+echo "Created symlink for .p10k.zsh"
+echo
 
 ### GIT config
-SOURCE_GIT_CONFIG="$(pwd)/git/.gitignore"
-TARGET_GIT_CONFIG="$HOME/.gitignore"
+SOURCE_GIT_DIR="$(pwd)/git"
+TARGET_GIT_DIR="$HOME"
 
-rm -f "$TARGET_GIT_CONFIG"
+# Loop through all files in the source .git directory
+shopt -s dotglob
+for source_file in "$SOURCE_GIT_DIR"/*git*; do
+    filename=$(basename "$source_file")
+    target_file="$TARGET_GIT_DIR/$filename"
 
-echo "Creating symlink for .gitignore"
-ln -s "$SOURCE_GIT_CONFIG" "$TARGET_GIT_CONFIG"
+    if [ -f "$target_file" ]; then
+        echo "$filename already exists, skipping symlink creation. Please do this manually."
+    else
+        echo "Creating symlink for $filename"
+        ln -s "$source_file" "$target_file"
+    fi
+done
+shopt -u dotglob
+echo
 
 
 # Sublime Text config
@@ -53,7 +60,7 @@ if [ -d "$SUBLIME_TARGET_DIR" ]; then
             target_file="$SUBLIME_TARGET_DIR/$filename"
             rm -f "$target_file"
             ln -s "$source_file" "$target_file"
-            echo "Created symlink for $filename"
+            echo "  Created symlink for $filename"
         fi
     done
 fi

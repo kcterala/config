@@ -36,6 +36,6 @@ Now I have started using [ghostty](https://ghostty.org/), with Arthur Theme. Bef
 
 
 ### Update configurations
-Once the apps are downloaded, run the `./update-configs.sh ` to automate the creation of symlinks. Restart or Source as needed.
+Once the apps are downloaded, run the `./create-symlinks.sh ` in the same directory to automate the creation of symlinks. Restart or Source as needed.
 
 
