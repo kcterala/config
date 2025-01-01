@@ -1,15 +1,16 @@
 ### TODOS
-- [ ] Write a shell script to create the symbolic links.
+- [x] Write a shell script to create the symbolic links.
 - [ ] Add VS code configuration.
 - [x] Add Sublime configuration.
 - [ ] Add Ghostty configuration.
+- [ ] Add Iterm2 configuration.
 - [ ] Add Intellij configuration.
-- [ ] Add troubleshooting q/as
+- [ ] Add troubleshooting q/as.
 
 
 # Mac Setup
 
-### 1. Fonts
+### Fonts
 I really like JetBrains Mono font. I tried so many mono fonts but I keep coming back to this. 
 
 - Download the JetBrains Mono Nerd font from [nerd fonts website](https://www.nerdfonts.com/font-downloads)
@@ -17,7 +18,7 @@ I really like JetBrains Mono font. I tried so many mono fonts but I keep coming 
 - The fonts will be saved to mac's font book, and we can use this anywhere in the system.
 
 
-### 2. Terminal
+### Terminal
 Now I have started using [ghostty](https://ghostty.org/), with Arthur Theme. Before this, I used iterm2 with the same theme.
 - Ghostty Configuration 
 - Iterm2 Configuration
@@ -25,31 +26,16 @@ Now I have started using [ghostty](https://ghostty.org/), with Arthur Theme. Bef
     - Put Background color as `#1c1c1c`
     - Put font as JetBrainsMono Nerd Font
 
-
-### 3. Shell Integration
-Zsh is the Mac's default shell and I'm using the same. I use p10k configuration for the prompt customization
-
-#### Steps to configure .zshrc and .p10k.zsh, once the repo is cloned
-- .zshrc Configuration
-    - Delete .zshrc file in the home folder.
-    - Create symbolic link of this repo's .zshrc to ~/.zshrc by running the following command
-    ```
-        ln -s [this repo's .zshrc file path] ~/.zshrc
-    ```
+### Apps to download
+- Sublime text
+- Intellij
+- VS code
+- iterm2 / Ghostty
+- Obsidian
+- Brave
 
 
-- .p10k.zsh Configuration 
-    - Delete .p10k.zsh file in the home folder.
-    - Create symbolic link of this repo's .p10k.zsh to ~/.p10k.zsh by running the following command
-    ```
-        ln -s [this repo's .p10k.zsh file path] ~/.p10k.zsh
-    ```
+### Update configurations
+Once the apps are downloaded, run the `./update-configs.sh ` to automate the creation of symlinks. Restart or Source as needed.
 
-
-Run `source ~/.zshrc` once the above steps are done.
-
-
-### 4. Sublime Integration
-- Create symbolic links for the files that are in sublime-text repo
-Path to find in the mac - `~/Library/Application Support/Sublime Text/Packages/User`
 
