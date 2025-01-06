@@ -1,8 +1,8 @@
 # Aliases
 alias ls='ls --color'
-alias l.='ls -d .* --color'
+alias l.='ls -ld .*' # Show only hidden files and directories
 alias c='clear'
-alias ll='ls -la'
+alias ll='ls -lAh'
 
 ## get rid of command not found ##
 alias cd..='cd ..'
