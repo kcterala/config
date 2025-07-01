@@ -1,0 +1,30 @@
+
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "shift shift",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "alt alt",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl ctrl",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "shift+enter",
+        "command": "editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.toggleSidebarVisibility"
+    }
+]

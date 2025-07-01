@@ -1,6 +1,6 @@
 ### TODOS
 - [x] Write a shell script to create the symlinks.
-- [ ] Add VS code configuration.
+- [x] Add VS code configuration.
 - [x] Add Sublime configuration.
 - [ ] Add Ghostty configuration.
 - [ ] Add Iterm2 configuration.
