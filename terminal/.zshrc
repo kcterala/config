@@ -77,6 +77,14 @@ source "$HOME/.zsh/functions.zsh"
 export FZF_DEFAULT_OPTS='--height 40%  --layout reverse --border top'
 
 export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+# bun completions
+[ -s "/Users/kc/.bun/_bun" ] && source "/Users/kc/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
