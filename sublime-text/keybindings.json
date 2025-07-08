@@ -1,0 +1,67 @@
+[
+    {
+        "keys":
+        [
+            "command+l"
+        ],
+        "command": "reindent"
+    },
+    {
+        "keys":
+        [
+            "ctrl+shift+s"
+        ],
+        "command": "auto_save"
+    },
+    {
+        "keys":
+        [
+            "command+shift+f"
+        ],
+        "command": "pretty_json"
+    },
+    {
+        "keys":
+        [
+            "ctrl+g"
+        ],
+        "command": "find_under_expand"
+    },
+    {
+        "keys":
+        [
+            "command+shift+up"
+        ],
+        "command": "swap_line_up"
+    },
+    {
+        "keys":
+        [
+            "command+shift+down"
+        ],
+        "command": "swap_line_down"
+    },
+    {
+        "keys":
+        [
+            "super+shift+f"
+        ],
+        "command": "show_panel",
+        "args":
+        {
+            "panel": "find_in_files"
+        }
+    },
+    {
+        "keys":
+        [
+            "shift",
+            "shift"
+        ],
+        "command": "show_overlay",
+        "args":
+        {
+            "overlay": "goto"
+        }
+    }
+]
