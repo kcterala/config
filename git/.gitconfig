@@ -1,12 +1,8 @@
-[user]
-    email = kcterala@gmail.com
-    name = kcterala
-
-[github]
-    user = "kcterala"
-
 [core]
     excludesfile = ~/.gitignore
 
 [pull]
     rebase = true
+[user]
+	name = kcterala
+	email = kcterala@gmail.com

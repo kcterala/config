@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/kc/.ssh/**)"
+      "Read(//Users/kc/.ssh/**)",
+      "Bash(tree:*)",
+      "WebSearch",
+      "Bash(defaults read:*)",
+      "Bash([ -d ~/Library/Application Support/Ghostty ])",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []

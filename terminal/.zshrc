@@ -90,3 +90,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias claude="/Users/kc/.claude/local/claude"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kc/.lmstudio/bin"
+# End of LM Studio CLI section
+

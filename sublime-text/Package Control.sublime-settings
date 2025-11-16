@@ -1,12 +1,158 @@
 {
-	"bootstrapped": true,
-	"in_process_packages":
+	"auto_migrate": true,
+	"auto_upgrade": true,
+	"auto_upgrade_frequency": 8,
+	"auto_upgrade_ignore":
+	[
+	],
+	"cache_length": 600,
+	"channels":
+	[
+		"https://packages.sublimetext.io/channel.json"
+	],
+	"debug": false,
+	"dirs_to_ignore":
+	[
+		".circleci",
+		".git",
+		".github",
+		".hg",
+		".svn",
+		"_darcs",
+		"CVS"
+	],
+	"downloader_precedence":
+	{
+		"linux":
+		[
+			"urllib",
+			"oscrypto",
+			"curl",
+			"wget"
+		],
+		"osx":
+		[
+			"urllib",
+			"oscrypto",
+			"curl"
+		],
+		"windows":
+		[
+			"wininet",
+			"oscrypto",
+			"urllib"
+		],
+	},
+	"files_to_ignore":
+	[
+		"*.pyc",
+		"*.sublime-project",
+		"*.sublime-workspace",
+		"*.tmTheme.cache",
+		".bzrignore",
+		".codecov.yml",
+		".coveragerc",
+		".flake8",
+		".gitattributes",
+		".gitignore",
+		".hgignore",
+		".travis.yml",
+		"__init__.py",
+		"appveyor.yml",
+		"codecov.yml",
+		"mypy.ini",
+		"pyproject.toml",
+		"tox.ini"
+	],
+	"files_to_include":
+	[
+	],
+	"git_binary":
+	[
+	],
+	"git_update_command":
+	[
+		"pull",
+		"--ff-only",
+		"--quiet"
+	],
+	"hg_binary":
+	[
+	],
+	"hg_update_command":
+	[
+		"pull",
+		"--update"
+	],
+	"http_basic_auth":
+	{
+	},
+	"http_cache": true,
+	"http_cache_length": 604800,
+	"http_proxy": "",
+	"https_proxy": "",
+	"ignore_vcs_packages":
+	[
+	],
+	"install_missing": true,
+	"install_prereleases":
 	[
 	],
 	"installed_packages":
 	[
-		"Package Control",
-		"Pretty JSON",
-		"Visual Studio Dark",
+		"Package Control"
+	],
+	"max_backup_age": 14,
+	"package_destination": "",
+	"package_name_map":
+	{
+	},
+	"package_profiles":
+	{
+		"Binaries Only":
+		{
+			"files_to_ignore":
+			[
+				"*.sublime-project",
+				"*.sublime-workspace",
+				"*.tmTheme.cache",
+				".bzrignore",
+				".gitignore",
+				".gitattributes",
+				".hgignore",
+				".codecov.yml",
+				".travis.yml",
+				"appveyor.yml",
+				"codecov.yml",
+				"*.py",
+				".coveragerc",
+				".flake8",
+				"pyproject.toml",
+				"tox.ini",
+				"mypy.ini"
+			],
+			"files_to_include":
+			[
+			],
+		},
+	},
+	"print_messages": "auto",
+	"proxy_password": "",
+	"proxy_username": "",
+	"remove_orphaned": true,
+	"remove_orphaned_enviornments": true,
+	"repositories":
+	[
+	],
+	"submit_url": "https://packagecontrol.io/submit",
+	"submit_usage": true,
+	"submit_usage_url": "https://stats.sublimetext.io/event",
+	"timeout": 30,
+	"unmanaged_packages_ignore":
+	[
+	],
+	"user_agent": "Package Control v%s",
+	"in_process_packages":
+	[
 	],
 }

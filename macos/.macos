@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+
+# macOS System Preferences Configuration Script
+# Run this script to apply custom macOS settings
+
+# Close System Preferences to prevent conflicts
+osascript -e 'tell application "System Preferences" to quit'
+
+echo "Setting macOS preferences..."
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+# Set interface style to Dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
+# Disable minimize windows on double-click
+defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false
+
+# Set double-click on title bar to Fill/Maximize window
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Fill"
+
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Set spring loading delay to 0.5 seconds
+defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
+
+###############################################################################
+# Trackpad                                                                    #
+###############################################################################
+
+# Enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Enable Dock auto-hide
+defaults write com.apple.dock autohide -bool true
+
+# Remove the auto-hide delay (show instantly)
+defaults write com.apple.dock autohide-delay -float 0
+
+# Set the animation speed when hiding/showing the Dock (faster)
+defaults write com.apple.dock autohide-time-modifier -float 0.5
+
+# Enable magnification
+defaults write com.apple.dock magnification -bool true
+
+# Set icon size
+defaults write com.apple.dock tilesize -int 56
+
+# Set magnified icon size
+defaults write com.apple.dock largesize -int 82
+
+# Don't show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
+# Set bottom-right hot corner to Quick Note (14)
+defaults write com.apple.dock wvous-br-corner -int 14
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Show external hard drives on desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+
+# Don't show internal hard drives on desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+
+# Show removable media on desktop
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+# Show sidebar
+defaults write com.apple.finder ShowSidebar -bool true
+
+###############################################################################
+# Screenshots                                                                 #
+###############################################################################
+
+# Save screenshots to clipboard by default
+defaults write com.apple.screencapture target -string "clipboard"
+
+# Default screenshot type to selection
+defaults write com.apple.screencapture style -string "selection"
+
+# Enable video recording
+defaults write com.apple.screencapture video -bool true
+
+###############################################################################
+# Menu Bar Clock                                                              #
+###############################################################################
+
+# Show AM/PM in menu bar clock
+defaults write com.apple.menuextra.clock ShowAMPM -bool true
+
+# Don't show date in menu bar clock
+defaults write com.apple.menuextra.clock ShowDate -bool false
+
+# Show day of week in menu bar clock
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+
+###############################################################################
+# Keyboard Shortcuts - Disable Spotlight/Siri                               #
+###############################################################################
+
+# Note: These are complex nested structures. The following disables several
+# common keyboard shortcuts that conflict with development tools.
+# Shortcuts 15-26 are Spotlight and Siri related shortcuts
+
+# Disable "Show Spotlight search" (Cmd+Space)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/></dict>"
+
+# Disable various Mission Control shortcuts that may conflict
+for key in 15 16 17 18 19 20 21 22 23 24 25 26; do
+    defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add $key "<dict><key>enabled</key><false/></dict>"
+done
+
+###############################################################################
+# Text Substitutions                                                          #
+###############################################################################
+
+# Note: Text substitutions are stored in NSUserDictionaryReplacementItems
+# These are already synced via iCloud, but documented here for reference:
+# - 77027 -> 7702740069
+# - omw -> On my way!
+# - myaddress -> 4-2-128, Srinagar Colony Roadno 5, Rotary Nagar, Khammam. 507002
+# - mail1 -> kcterala@gmail.com
+# - mali2 -> krishna.chaitanya949494@gmail.com
+# - mm -> em dng
+# - gtg -> gotta go
+# - gth -> good to hear
+# - kk -> okay
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+echo "Done! Restarting affected apps..."
+
+for app in "Dock" "Finder" "SystemUIServer"; do
+    killall "${app}" &> /dev/null
+done
+
+echo "macOS preferences have been set successfully!"
+echo "Note: Some changes may require a logout/restart to take effect."
