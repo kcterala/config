@@ -88,6 +88,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Source aliases and functions
 source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/functions.zsh"
+source "$HOME/.zsh/work.zsh"
 
 # Open in tmux popup if on tmux, otherwise use --height mode
 export FZF_DEFAULT_OPTS='--height 40%  --layout reverse --border top'
@@ -132,4 +133,3 @@ export BUN_INSTALL="$HOME/.bun"
 # Optimization: Consolidate all remaining PATH exports
 export PATH="$BUN_INSTALL/bin:/Users/kc/.lmstudio/bin:/Users/kc/.antigravity/antigravity/bin:$PATH"
 
-alias claude="/Users/kc/.claude/local/claude"
