@@ -1,2 +1,5 @@
+# macOS system files
+.DS_Store
+
 # Work-specific configuration (tracked once, then ignored for local changes)
 terminal/.zsh/work.zsh
