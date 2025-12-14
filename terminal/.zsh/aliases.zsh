@@ -3,6 +3,7 @@ alias ls='ls --color'
 alias l.='ls -ld .*' # Show only hidden files and directories
 alias c='clear'
 alias ll='ls -lAh'
+alias glr='pretty_git_log -30'
 
 ## get rid of command not found ##
 alias cd..='cd ..'
