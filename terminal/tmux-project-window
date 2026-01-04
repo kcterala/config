@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Directories to search for projects
+SEARCH_DIRS=(
+    ~/Developer
+    ~/projects
+    ~/work
+)
+
+# Find all directories in search paths
+dirs=""
+for dir in "${SEARCH_DIRS[@]}"; do
+    [[ -d "$dir" ]] && dirs="$dirs $dir"
+done
+
+# Use fzf to select a project
+selected=$(
+    find $dirs -mindepth 1 -maxdepth 2 -type d 2>/dev/null \
+    | fzf --reverse --border=none --margin=1 --padding=1 \
+          --height=100% --prompt='  ' --pointer='▌' --no-scrollbar \
+          --color=bg:#101010,bg+:#232323,fg:#A0A0A0,fg+:#FFFFFF,hl:#FFC799,hl+:#FFC799,pointer:#FFC799,prompt:#FFC799,info:#5C5C5C
+)
+
+[[ -z "$selected" ]] && exit 0
+
+# Get a clean window name from the directory
+window_name=$(basename "$selected" | tr '.' '_')
+
+# Create new window in current session with the project directory
+tmux new-window -n "$window_name" -c "$selected"

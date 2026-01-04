@@ -37,3 +37,38 @@ function pretty_git_log() {
   less -XRS --quit-if-one-screen
 }
 
+# Add current directory as a new window to a tmux session
+# Usage: ta [session-name]
+# If session-name is provided, adds to that session
+# If not provided, adds to the most recent session
+function ta() {
+  # Check if tmux is running
+  if ! tmux list-sessions &>/dev/null; then
+    echo "No tmux sessions running. Start tmux first."
+    return 1
+  fi
+
+  # Get current directory and create window name
+  local current_dir="$PWD"
+  local window_name=$(basename "$current_dir" | tr '.' '_')
+
+  # Get session: either from argument or most recent
+  local session="$1"
+  if [ -z "$session" ]; then
+    session=$(tmux list-sessions -F '#{session_name}:#{session_created}' | sort -t: -k2 -rn | head -1 | cut -d: -f1)
+  else
+    # Verify the session exists
+    if ! tmux has-session -t "$session" 2>/dev/null; then
+      echo "Session '$session' not found."
+      echo "Available sessions:"
+      tmux list-sessions -F '  - #{session_name}'
+      return 1
+    fi
+  fi
+
+  # Create new window in that session
+  tmux new-window -t "$session:" -n "$window_name" -c "$current_dir"
+
+  echo "✓ Added window '$window_name' to session '$session'"
+}
+

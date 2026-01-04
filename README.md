@@ -20,11 +20,29 @@ I really like JetBrains Mono font. I tried so many mono fonts but I keep coming 
 
 ### Terminal
 Now I have started using [ghostty](https://ghostty.org/), with Arthur Theme. Before this, I used iterm2 with the same theme.
-- Ghostty Configuration 
+- Ghostty Configuration
 - Iterm2 Configuration
     - Download [Arthur](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Arthur.itermcolors) iterm theme, by saving the file (remove .txt extension when saving).
     - Put Background color as `#1c1c1c`
     - Put font as JetBrainsMono Nerd Font
+    - For blinking line cursor: Preferences → Profiles → Text → Cursor: "Vertical Bar" + "Blinking cursor"
+
+### Tmux
+Using a custom Vesper-themed tmux config. Prefix key is `Ctrl+a`.
+
+| Keybinding | Action |
+|------------|--------|
+| `prefix + r` | Reload config |
+| `prefix + \|` | Split horizontally (side-by-side) |
+| `prefix + -` | Split vertically (stacked) |
+| `prefix + h/j/k/l` | Navigate panes (vim-style) |
+| `prefix + H/J/K/L` | Resize panes |
+| `prefix + [` / `]` | Previous/next pane |
+| `prefix + c` | New window |
+| `prefix + x` | Kill pane |
+| `prefix + X` | Kill window |
+| `prefix + z` | Toggle pane zoom |
+| `prefix + o` | Open project picker |
 
 ### Apps to download
 - Sublime text

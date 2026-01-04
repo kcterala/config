@@ -133,3 +133,6 @@ export BUN_INSTALL="$HOME/.bun"
 # Optimization: Consolidate all remaining PATH exports
 export PATH="$BUN_INSTALL/bin:/Users/kc/.lmstudio/bin:/Users/kc/.antigravity/antigravity/bin:$PATH"
 
+
+# opencode
+export PATH=/Users/kc/.opencode/bin:$PATH
