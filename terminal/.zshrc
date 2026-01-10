@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -26,7 +25,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
-# Optimization: Use turbo mode (wait lucid) to defer loading non-critical plugins
+
 # This loads them asynchronously after prompt appears, improving startup time
 zinit ice wait lucid
 zinit light zsh-users/zsh-syntax-highlighting
@@ -136,3 +135,6 @@ export PATH="$BUN_INSTALL/bin:/Users/kc/.lmstudio/bin:/Users/kc/.antigravity/ant
 
 # opencode
 export PATH=/Users/kc/.opencode/bin:$PATH
+
+# kit
+export PATH="$HOME/bin:$PATH"

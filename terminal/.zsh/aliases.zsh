@@ -22,3 +22,6 @@ alias home='cd ~'
 alias personal='cd ~/personal'
 alias undo='git checkout -- .'
 alias diff='diff --color'
+
+# kit
+alias ai-commit="kit ai-commit"
